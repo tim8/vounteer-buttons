@@ -10,8 +10,8 @@
             return ['button', {'class':'btn','id': id,'volunteer-type': type} ].concat('volunteer');
         }
     });
-  Discourse.Markdown.whiteListTag('button', 'id');
-  Discourse.Markdown.whiteListTag('button', 'volunteer-type');
+  Discourse.Markdown.whiteListTag('button', 'id','*');
+  Discourse.Markdown.whiteListTag('button', 'volunteer-type','*');
   Discourse.Markdown.whiteListTag('button', 'class','btn');
 
 }).call(this);
