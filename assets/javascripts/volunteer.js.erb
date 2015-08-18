@@ -1,12 +1,11 @@
 (function() {
-    Discourse.Dialect.inlineBetween({
+    Discourse.Dialect.inlineRegexp({
         start: "[volunteer:",
-        stop:  "[/volunteer]",
-        rawContents: true,
+        end: "[/volunteer]",
+        matcher: /^\[volunteer:([a-zA-Z]+)\]([0-9]*)\[\/volunteer\]/,
         emitter: function(contents) {
-            var matches = contents.match(/([a-zA-Z]+)\]([0-9]*)/);
-            var type = matches[1];
-            var id = matches[2];
+            var type = contents[1];
+            var id = contents[2];
             return ['button', {'class':'btn','id': id,'volunteer-type': type} ].concat('volunteer');
         }
     });
