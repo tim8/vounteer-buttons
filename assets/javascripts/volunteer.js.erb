@@ -1,14 +1,14 @@
 (function() {
 
-    Discourse.Dialect.inlineBetween({
-        start: "[volunteer=",
-        stop:  "[/volunteer]",
-        rawContents: true,
-        emitter: function(contents) {
-            var matches = contents.match(/(.+)]([\s\S]*)/);
-            if (matches) return ["button", {"class": "btn standard","id": concat(this.processInline(matches[1]))}].concat(this.processInline(matches[2]));
-        }
-    });
-  Discourse.Markdown.whiteListTag('button', 'class', 'btn standard' );
+  Discourse.Dialect.inlineRegexp({
+    start: '[volunteer:',
+    matcher: /(.+)]([\s\S]*)[\/volunteer]/,
+    emitter: function(contents) {
+      var type = contents[1];
+      var id = contents[2];
+      return ['button', {"id": id} ].concat('volunteer');
+    }
+  });
+  Discourse.Markdown.whiteListTag('button', 'id');
 
 }).call(this);
