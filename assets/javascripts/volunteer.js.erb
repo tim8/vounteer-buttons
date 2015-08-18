@@ -4,7 +4,10 @@
         stop:  "[/volunteer]",
         rawContents: true,
         emitter: function(contents) {
-            return ['button', {'id': contents} ].concat('volunteer');
+            return ['button', {
+                'id': contents,
+                'volunteer-type': 'sound'
+            } ].concat('volunteer');
         }
     });
     Discourse.Dialect.inlineBetween({
@@ -12,10 +15,13 @@
         stop:  "[/volunteer]",
         rawContents: true,
         emitter: function(contents) {
-            return ['button', {id: contents} ].concat('volunteer');
+            return ['button', {
+                'id': contents,
+                'volunteer-type': 'trivia'
+            } ].concat('volunteer');
         }
     });
-    Discourse.Markdown.whiteListTag('button', 'id');
+    Discourse.Markdown.whiteListTag('button', 'id', /[0-9]+/);
     Discourse.Markdown.whiteListTag('button', 'volunteer-type','sound');
     Discourse.Markdown.whiteListTag('button', 'volunteer-type','trivia');
     Discourse.Markdown.whiteListTag('button', 'class','btn');
