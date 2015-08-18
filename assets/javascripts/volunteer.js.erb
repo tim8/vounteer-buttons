@@ -1,0 +1,14 @@
+(function() {
+
+    Discourse.Dialect.inlineBetween({
+        start: "[volunteer=",
+        stop:  "[/volunteer]",
+        rawContents: true,
+        emitter: function(contents) {
+            var matches = contents.match(/(.+)]([\s\S]*)/);
+            if (matches) return ["button", {"class": "btn standard","id": concat(this.processInline(matches[1]))}].concat(this.processInline(matches[2]));
+        }
+    });
+  Discourse.Markdown.whiteListTag('button', 'class', 'btn standard' );
+
+}).call(this);
