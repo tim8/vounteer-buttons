@@ -1,16 +1,23 @@
 (function() {
-    Discourse.Dialect.inlineRegexp({
-        start: "[volunteer:",
-        end: "[/volunteer]",
-        matcher: /^\[volunteer:([a-zA-Z]+)\]([0-9]*)\[\/volunteer\]/,
+    Discourse.Dialect.inlineBetween({
+        start: "[volunteer:sound]",
+        stop:  "[/volunteer]",
+        rawContents: true,
         emitter: function(contents) {
-            var type = contents[1];
-            var id = contents[2];
-            return ['button', {'class':'btn','id': id,'volunteer-type': type} ].concat('volunteer');
+            return ['button', {'id': contents,'volunteer-type': 'sound'} ].concat('volunteer');
         }
     });
-  Discourse.Markdown.whiteListTag('button', 'id','*');
-  Discourse.Markdown.whiteListTag('button', 'volunteer-type','*');
-  Discourse.Markdown.whiteListTag('button', 'class','btn');
+    Discourse.Dialect.inlineBetween({
+        start: "[volunteer:trivia]",
+        stop:  "[/volunteer]",
+        rawContents: true,
+        emitter: function(contents) {
+            return ['button', {'id': contents,'volunteer-type': 'trivia'} ].concat('volunteer');
+        }
+    });
+    Discourse.Markdown.whiteListTag('button', 'id','*');
+    Discourse.Markdown.whiteListTag('button', 'volunteer-type','sound');
+    Discourse.Markdown.whiteListTag('button', 'volunteer-type','trivia');
+    Discourse.Markdown.whiteListTag('button', 'class','btn');
 
 }).call(this);
