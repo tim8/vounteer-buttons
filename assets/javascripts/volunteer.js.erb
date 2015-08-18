@@ -1,14 +1,15 @@
 (function() {
-
-  Discourse.Dialect.inlineRegexp({
-    start: '[volunteer:',
-    matcher: /(.+)]([\s\S]*)[\/volunteer]/,
-    emitter: function(contents) {
-      var type = contents[1];
-      var id = contents[2];
-      return ['button', {"id": id} ].concat('volunteer');
-    }
-  });
+    Discourse.Dialect.inlineBetween({
+        start: "[volunteer:",
+        stop:  "[/volunteer]",
+        rawContents: true,
+        emitter: function(contents) {
+            var matches = contents.match(/(.+)]([\s\S]*)/);
+            var type = matches[1];
+            var id = matches[2];
+            return ['button', {'id': id,'volunteer-type': type} ].concat('volunteer');
+        }
+    });
   Discourse.Markdown.whiteListTag('button', 'id');
 
 }).call(this);

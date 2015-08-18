@@ -1,6 +1,6 @@
 # name: volunteer buttons
 # about: click to volunteer
-# version: 1.0
+# version: 1.0.1
 # author: mrl
 # Supported Discourse version: v1.3
 
