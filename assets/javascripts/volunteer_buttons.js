@@ -1,16 +1,19 @@
 Discourse.PostView.reopen({
   createVolunteerButton: function($post) {
-    
+    if(this.get('post.topic').category && this.get('post.topic.category').id != 11){
+        return
+    };
     var age = new Date() - new Date(this.get('post.topic.created_at')),
         buttons = $post.find(".volunteer-button"),
         user = Discourse.User.currentProp('username');
     
     if(!buttons){return};
     if(!user){
-        $(buttons).after('Log In to volunteer');
-    }
-    if (!user || this.get('post.topic.category').id != 1 || age >= 86400000) { 
-        $(buttons).remove();
+        $(buttons).after('log in to volunteer');
+    };
+    if (!user || age >= 86400000) { 
+        $(buttons).prop("disabled", true);
+        //$(buttons).remove();
         return
         };
     
