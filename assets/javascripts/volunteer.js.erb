@@ -15,10 +15,8 @@
         rawContents: true,
         emitter: function(contents) {
             return ['button', {
-                'class' : 'btn',
-                'id': contents,
-                'volunteer-type': 'trivia'
-            } ].concat('volunteer');
+                'class' : 'btn'
+            } ].concat(contents);
         }
     });
     Discourse.Markdown.whiteListTag('button', 'id', /^\d+$/);
