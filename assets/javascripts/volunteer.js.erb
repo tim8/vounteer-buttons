@@ -5,18 +5,20 @@
         rawContents: true,
         emitter: function(contents) {
             return ['button', {
-                'class' : 'btn'
-            }, 'vounteer'];
+                class : 'btn',
+                id : contents
+            } ].concat('volunteer');
         }
     });
     Discourse.Dialect.inlineBetween({
-        start: '[volunteer:trivia]',
-        stop:  '[/volunteer]',
+        start: "[volunteer:trivia]",
+        stop:  "[/volunteer]",
         rawContents: true,
         emitter: function(contents) {
             return ['button', {
-                'class' : 'btn'
-            } ].concat(contents);
+                class : 'btn',
+                id : contents
+            } ].concat('volunteer');
         }
     });
     Discourse.Markdown.whiteListTag('button', 'id', /^\d+$/);
