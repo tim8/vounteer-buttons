@@ -5,9 +5,7 @@
         rawContents: true,
         emitter: function(contents) {
             return ['button', {
-                'class' : 'btn',
-                'id': contents,
-                'volunteer-type': 'sound'
+                'class' : 'btn'
             }, 'vounteer'];
         }
     });
@@ -20,7 +18,7 @@
                 'class' : 'btn',
                 'id': contents,
                 'volunteer-type': 'trivia'
-            }, 'vounteer' ];
+            } ].concat('volunteer');
         }
     });
     Discourse.Markdown.whiteListTag('button', 'id', /^\d+$/);
