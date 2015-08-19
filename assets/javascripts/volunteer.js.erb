@@ -4,7 +4,11 @@
         stop:  '[/volunteer]',
         rawContents: true,
         emitter: function(contents) {
-            return ['a', {"class": "btn"}, contents];
+            return ['button', {
+                'class' : 'btn',
+                'id': contents,
+                'volunteer-type': 'sound'
+            }, 'volunteer'];
         }
     });
     Discourse.Dialect.inlineBetween({
@@ -13,9 +17,10 @@
         rawContents: true,
         emitter: function(contents) {
             return ['button', {
-                class : 'btn',
-                id : contents
-            },'volunteer'];
+                'class' : 'btn',
+                'id': contents,
+                'volunteer-type': 'trivia'
+            }, 'volunteer'];
         }
     });
     Discourse.Markdown.whiteListTag('button', 'id', /^\d+$/);
