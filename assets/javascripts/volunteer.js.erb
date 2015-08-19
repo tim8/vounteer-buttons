@@ -1,26 +1,26 @@
 (function() {
     Discourse.Dialect.inlineBetween({
-        start: "[volunteer:sound]",
-        stop:  "[/volunteer]",
+        start: '[volunteer:sound]',
+        stop:  '[/volunteer]',
         rawContents: true,
         emitter: function(contents) {
             return ['button', {
                 'class' : 'btn',
                 'id': contents,
                 'volunteer-type': 'sound'
-            } ].concat('volunteer');
+            }, 'vounteer'];
         }
     });
     Discourse.Dialect.inlineBetween({
-        start: "[volunteer:trivia]",
-        stop:  "[/volunteer]",
+        start: '[volunteer:trivia]',
+        stop:  '[/volunteer]',
         rawContents: true,
         emitter: function(contents) {
             return ['button', {
                 'class' : 'btn',
                 'id': contents,
                 'volunteer-type': 'trivia'
-            } ].concat('volunteer');
+            }, 'vounteer' ];
         }
     });
     Discourse.Markdown.whiteListTag('button', 'id', /^\d+$/);
