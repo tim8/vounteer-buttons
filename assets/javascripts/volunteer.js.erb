@@ -1,5 +1,5 @@
 (function() {
-    Discourse.Dialect.replaceBlock({
+    Discourse.Dialect.inlineBetween({
         start: "[volunteer:sound]",
         stop:  "[/volunteer]",
         rawContents: true,
@@ -11,7 +11,7 @@
             } ].concat('volunteer');
         }
     });
-    Discourse.Dialect.replaceBlock({
+    Discourse.Dialect.inlineBetween({
         start: "[volunteer:trivia]",
         stop:  "[/volunteer]",
         rawContents: true,
