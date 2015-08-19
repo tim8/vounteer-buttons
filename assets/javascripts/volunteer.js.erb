@@ -4,10 +4,7 @@
         stop:  '[/volunteer]',
         rawContents: true,
         emitter: function(contents) {
-            return ['button', {
-                class : 'btn',
-                id : contents
-            } ].concat('volunteer');
+            return ['a', {"class": "btn"}, contents];
         }
     });
     Discourse.Dialect.inlineBetween({
