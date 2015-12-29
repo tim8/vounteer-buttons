@@ -1,4 +1,7 @@
-Discourse.PostView.reopen({
+import PostView from "discourse/views/post";
+import Post from 'discourse/models/post';
+
+PostView.reopen({
   createVolunteerButton: function($post) {
     if(this.get('post.topic').category && this.get('post.topic.category').id != 11){
         return
