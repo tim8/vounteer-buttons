@@ -18,7 +18,7 @@ export default function volunteerSyntax($elem, post)
   if(topic.category && topic.id != 11){
       return
   };
-  var age = new Date() - new Date(post.topic.created_at),
+  var age = new Date() - new Date(topic.created_at),
       buttons = post.find(".volunteer-button"),
       user = Discourse.User.currentProp('username');
 
