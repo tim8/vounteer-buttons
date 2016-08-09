@@ -15,7 +15,7 @@ export function setup(helper) {
   helper.whiteList({
     custom(tag, name, value) {
       if (tag === 'button' && name === 'show') {
-        return /^[a-zA-Z]{2}\d{12}/.exec(value);
+        return /^.*$/.exec(value);
       }
     }
   });
