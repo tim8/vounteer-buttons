@@ -1,0 +1,4 @@
+plugins:
+  volunteerbuttons_enabled:
+    default: true
+    client: true
