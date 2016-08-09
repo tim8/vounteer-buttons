@@ -15,10 +15,10 @@ function initializePlugin(api)
 export default function volunteerSyntax($elem, post)
 {
   if (!post) { return; }
-  if(this.get('post.topic').category && this.get('post.topic.category').id != 11){
+  if(post.topic.category && post.topic.id != 11){
       return
   };
-  var age = new Date() - new Date(this.get('post.topic.created_at')),
+  var age = new Date() - new Date(post.topic.created_at),
       buttons = post.find(".volunteer-button"),
       user = Discourse.User.currentProp('username');
 
