@@ -15,7 +15,7 @@ function initializePlugin(api)
 export default function volunteerSyntax($elem, post)
 {
   if (!post) { return; }
-  if(post.topic.category && post.topic.id != 11){
+  if(topic.category && topic.id != 11){
       return
   };
   var age = new Date() - new Date(post.topic.created_at),
