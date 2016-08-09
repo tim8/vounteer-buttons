@@ -15,14 +15,14 @@ export function setup(helper) {
   helper.whiteList({
     custom(tag, name, value) {
       if (tag === 'button' && name === 'show') {
-        return /^[a-zA-Z]{2}\d{12}/.exec(value);
+        return /([0-9a-z-]+)/.exec(value);
       }
     }
   });
 
   helper.inlineRegexp({
     start: '[vs:',
-    matcher: /^\[vs:([a-zA-Z]{2}\d{12})\]/,
+    matcher: /^\[vs:([0-9a-z-]+)\]/,
     emitter: function(contents) {
       var show = contents[1];
         return ['button', {
@@ -34,7 +34,7 @@ export function setup(helper) {
   });
   helper.inlineRegexp({
     start: '[vt:',
-    matcher: /^\[vt:([a-zA-Z]{2}\d{12})\]/,
+    matcher: /^\[vt:([0-9a-z-]+)\]/,
     emitter: function(contents) {
       var show = contents[1];
         return ['button', {
