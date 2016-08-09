@@ -19,7 +19,7 @@ export default function volunteerSyntax($elem, post)
       return
   };
   var age = new Date() - new Date(topic.created_at),
-      buttons = post.find(".volunteer-button"),
+      buttons = $elem.find(".volunteer-button"),
       user = Discourse.User.currentProp('username');
 
   if(!buttons){return};
