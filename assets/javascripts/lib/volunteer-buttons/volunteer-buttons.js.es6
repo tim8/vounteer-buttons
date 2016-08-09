@@ -1,7 +1,7 @@
 import { registerOption } from 'pretty-text/pretty-text';
 
 registerOption((siteSettings, opts) => {
-  opts.features['volunteer-butons'] = true;
+  opts.features['volunteerbutons'] = true;
 });
 
 
@@ -15,15 +15,16 @@ export function setup(helper) {
   helper.whiteList({
     custom(tag, name, value) {
       if (tag === 'button' && name === 'show') {
-        return /([0-9a-z-]+)/.exec(value);
+        return /^[a-zA-Z]{2}\d{12}/.exec(value);
       }
     }
   });
 
   helper.inlineRegexp({
     start: '[vs:',
-    matcher: /^\[vs:([0-9a-z-]+)\]/,
+    matcher: /^\[vs:([a-zA-Z]{2}\d{12})\]/,
     emitter: function(contents) {
+      console.log(contents);
       var show = contents[1];
         return ['button', {
             'class' : 'btn btn-small volunteer-button',
@@ -34,8 +35,9 @@ export function setup(helper) {
   });
   helper.inlineRegexp({
     start: '[vt:',
-    matcher: /^\[vt:([0-9a-z-]+)\]/,
+    matcher: /^\[vt:([a-zA-Z]{2}\d{12})\]/,
     emitter: function(contents) {
+      console.log(contents);
       var show = contents[1];
         return ['button', {
             'class' : 'btn btn-small volunteer-button',
