@@ -12,15 +12,9 @@ export function setup(helper) {
     'button[volunteer]',
     'button.btn-small',
     'button.volunteer-button',
-    'button.btn'
+    'button.btn',
+    'button[show]'
   ]);
-  helper.whiteList({
-    custom(tag, name, value) {
-      if (tag === 'button' && name === 'show') {
-        return /^(.+)$/.exec(value);
-      }
-    }
-  });
 
   helper.inlineRegexp({
     start: '[vs:',
