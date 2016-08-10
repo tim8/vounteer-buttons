@@ -11,7 +11,9 @@ export function setup(helper) {
     'button',
     'button[volunteer]',
     'button[show]',
-    'button.btn btn-small volunteer-button'
+    'button.btn',
+    'button.btn-small',
+    'button.volunteer-button'
   ]);
 
   helper.inlineRegexp({
