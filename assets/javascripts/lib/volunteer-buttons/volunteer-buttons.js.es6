@@ -8,8 +8,7 @@ registerOption((siteSettings, opts) => {
 
 export function setup(helper) {
   helper.whiteList([ 
-    'button[volunteer=sound]',
-    'button[volunteer=trivia]',
+    'button[volunteer]',
     'button[show]',
     'button.btn btn-small volunteer-button'
   ]);
