@@ -1,7 +1,7 @@
 import { registerOption } from 'pretty-text/pretty-text';
 
 registerOption((siteSettings, opts) => {
-  opts.features['volunteer-butons'] = true;
+  opts.features['volunteer-buttons'] = true;
 });
 
 
