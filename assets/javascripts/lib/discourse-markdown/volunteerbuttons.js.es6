@@ -1,24 +1,20 @@
 import { registerOption } from 'pretty-text/pretty-text';
 
 registerOption((siteSettings, opts) => {
-  opts.features['volunteer-butons'] = true;
+  opts.features['volunteerbutons'] = true;
 });
 
 
 
 export function setup(helper) {
   helper.whiteList([ 
-    'button[volunteer=sound]',
-    'button[volunteer=trivia]',
-    'button.btn btn-small volunteer-button'
+    'button',
+    'button[volunteer]',
+    'button.btn-small',
+    'button.volunteer-button',
+    'button.btn',
+    'button[show]'
   ]);
-  helper.whiteList({
-    custom(tag, name, value) {
-      if (tag === 'button' && name === 'show') {
-        return /^[a-zA-Z]{2}\d{12}/.exec(value);
-      }
-    }
-  });
 
   helper.inlineRegexp({
     start: '[vs:',
