@@ -24,6 +24,7 @@ export function setup(helper) {
     start: '[vs:',
     matcher: /^\[vs:([a-zA-Z]{2}\d{12})\]/,
     emitter: function(contents) {
+      console.log(contents);
       var show = contents[1];
         return ['button', {
             'class' : 'btn btn-small volunteer-button',
@@ -36,6 +37,7 @@ export function setup(helper) {
     start: '[vt:',
     matcher: /^\[vt:([a-zA-Z]{2}\d{12})\]/,
     emitter: function(contents) {
+      console.log(contents);
       var show = contents[1];
         return ['button', {
             'class' : 'btn btn-small volunteer-button',
