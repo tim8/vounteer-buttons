@@ -8,14 +8,13 @@ registerOption((siteSettings, opts) => {
 
 export function setup(helper) {
   helper.whiteList([ 
-    'button[volunteer=sound]',
-    'button[volunteer=trivia]',
+    'button[volunteer]',
     'button.btn btn-small volunteer-button'
   ]);
   helper.whiteList({
     custom(tag, name, value) {
       if (tag === 'button' && name === 'show') {
-        return /^[a-zA-Z]{2}\d{12}/.exec(value);
+        return /^(.+)$/.exec(value);
       }
     }
   });
