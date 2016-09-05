@@ -50,13 +50,6 @@ export function setup(helper) {
       var show = contents[1];
       if(contents[2]){
         return ['button', {
-            'class' : 'btn btn-small volunteer-button volunteered',
-            'show': show,
-            'volunteer': 'trivia',
-            'user': contents[2]
-        }, '<i class="fa fa-check-square-o"></i> '+ options.lookupAvatar(contents[2]) ];
-      }
-        return ['button', {
             'class' : 'btn btn-small volunteer-button',
             'show': show,
             'volunteer': 'trivia'
