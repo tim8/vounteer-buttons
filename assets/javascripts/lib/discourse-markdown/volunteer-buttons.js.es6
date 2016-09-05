@@ -21,9 +21,16 @@ export function setup(helper) {
 
   helper.inlineRegexp({
     start: '[vs:',
-    matcher: /^\[vs:([a-zA-Z]{2}\d{12})\]/,
+    matcher: /^\[vs:([a-z]{2}\d{12})(?:\:([a-z0-9]+))?\]/i,
     emitter: function(contents) {
       var show = contents[1];
+      if(contents[2]){
+        return ['button', {
+            'class' : 'btn btn-small volunteer-button volunteered',
+            'show': show,
+            'volunteer': 'sound'
+        }, '<i class="fa fa-check-square-o"></i> @' + contents[2]];
+      }
         return ['button', {
             'class' : 'btn btn-small volunteer-button',
             'show': show,
@@ -33,9 +40,16 @@ export function setup(helper) {
   });
   helper.inlineRegexp({
     start: '[vt:',
-    matcher: /^\[vt:([a-zA-Z]{2}\d{12})\]/,
+    matcher: /^\[vt:([a-z]{2}\d{12})(?:\:([a-z0-9]+))?\]/i,
     emitter: function(contents) {
       var show = contents[1];
+      if(contents[2]){
+        return ['button', {
+            'class' : 'btn btn-small volunteer-button volunteered',
+            'show': show,
+            'volunteer': 'trivia'
+        }, '<i class="fa fa-check-square-o"></i> @' + contents[2]];
+      }
         return ['button', {
             'class' : 'btn btn-small volunteer-button',
             'show': show,
