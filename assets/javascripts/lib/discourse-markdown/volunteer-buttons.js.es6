@@ -28,8 +28,9 @@ export function setup(helper) {
         return ['p',['button', {
             'class' : 'btn btn-small volunteer-button volunteered',
             'show': show,
-            'volunteer': 'sound'
-        }, '<i class="fa fa-check-square-o"></i>'], ['a', {'class': 'mention', '/users/' + contents[2].toLowerCase()}, ' @' + contents[2]];
+            'volunteer': 'sound',
+            'user': contents[2]
+        }, '<i class="fa fa-check-square-o"></i>'], ['a', {'class': 'mention', '/users/' + contents[2].toLowerCase()}, ' @' + contents[2]]];
       }
         return ['button', {
             'class' : 'btn btn-small volunteer-button',
@@ -47,7 +48,8 @@ export function setup(helper) {
         return ['p',['button', {
             'class' : 'btn btn-small volunteer-button volunteered',
             'show': show,
-            'volunteer': 'trivia'
+            'volunteer': 'trivia',
+            'user': contents[2]
         }, '<i class="fa fa-check-square-o"></i>'], ' @' + contents[2]];
       }
         return ['button', {
