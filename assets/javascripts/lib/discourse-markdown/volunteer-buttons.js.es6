@@ -27,7 +27,7 @@ export function setup(helper) {
       if(contents[2]){
         return ['p',
           ['button', {
-              'class' : 'btn btn-small volunteer-button volunteered',
+              'class' : 'btn btn-small volunteered',
               'show': show,
               'volunteer': 'sound',
               'user': contents[2]
@@ -50,7 +50,7 @@ export function setup(helper) {
       if(contents[2]){
         return ['p',
           ['button', {
-              'class' : 'btn btn-small volunteer-button volunteered',
+              'class' : 'btn btn-small volunteered',
               'show': show,
               'volunteer': 'trivia',
               'user': contents[2]
