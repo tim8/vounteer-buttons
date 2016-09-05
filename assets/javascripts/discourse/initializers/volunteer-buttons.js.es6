@@ -38,7 +38,7 @@ export default function volunteerSyntax($elem, post)
           type = this.getAttribute("volunteer");
 
 
-        if(ev.altKey)
+        if(obj.altKey)
         {
           var user = prompt("Enter a valid username",user);
           if (user == false) 
