@@ -53,7 +53,7 @@ export function setup(helper) {
             'show': show,
             'volunteer': 'trivia',
             'user': contents[2]
-        }, '<i class="fa fa-check-square-o"></i> '+ options.lookupAvatar(contents[2]) ];
+        }, '<i class="fa fa-check-square-o"></i> '+ opts.lookupAvatar(contents[2]) ];
       }
         return ['button', {
             'class' : 'btn btn-small volunteer-button',
