@@ -1,4 +1,5 @@
 import { registerOption } from 'pretty-text/pretty-text';
+import { renderAvatar } from 'discourse/helpers/user-avatar';
 
 registerOption((siteSettings, opts) => {
   opts.features['volunteer-buttons'] = true;
@@ -45,12 +46,12 @@ export function setup(helper) {
     emitter: function(contents) {
       var show = contents[1];
       if(contents[2]){
-        return ['p',['button', {
+        return ['button', {
             'class' : 'btn btn-small volunteer-button volunteered',
             'show': show,
             'volunteer': 'trivia',
             'user': contents[2]
-        }, '<i class="fa fa-check-square-o"></i>'], ' @' + contents[2]];
+        }, '<i class="fa fa-check-square-o"></i> '+ renderAvatar(contents[2], {usernamePath: contents[2], imageSize: 'small'}) ];
       }
         return ['button', {
             'class' : 'btn btn-small volunteer-button',
