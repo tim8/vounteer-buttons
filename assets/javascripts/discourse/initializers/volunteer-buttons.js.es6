@@ -32,7 +32,7 @@ export default function volunteerSyntax($elem, post)
       return
       };
 
-    $(buttons.volunteer-button).click(function(obj) {
+    $(buttons).click(function(obj) {
       var elem = $(obj.currentTarget),
           show = this.getAttribute("show"),
           type = this.getAttribute("volunteer");
