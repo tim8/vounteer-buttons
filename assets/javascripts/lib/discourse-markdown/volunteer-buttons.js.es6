@@ -25,11 +25,11 @@ export function setup(helper) {
     emitter: function(contents) {
       var show = contents[1];
       if(contents[2]){
-        return ['button', {
+        return ['p',['button', {
             'class' : 'btn btn-small volunteer-button volunteered',
             'show': show,
             'volunteer': 'sound'
-        }, '<i class="fa fa-check-square-o"></i>', '@' + contents[2]];
+        }, '<i class="fa fa-check-square-o"></i>'], ['a', {'class': 'mention', '/users/' + contents[2].toLowerCase()}, ' @' + contents[2]];
       }
         return ['button', {
             'class' : 'btn btn-small volunteer-button',
@@ -44,11 +44,11 @@ export function setup(helper) {
     emitter: function(contents) {
       var show = contents[1];
       if(contents[2]){
-        return ['button', {
+        return ['p',['button', {
             'class' : 'btn btn-small volunteer-button volunteered',
             'show': show,
             'volunteer': 'trivia'
-        }, '<i class="fa fa-check-square-o"></i>','@' + contents[2]];
+        }, '<i class="fa fa-check-square-o"></i>'], ' @' + contents[2]];
       }
         return ['button', {
             'class' : 'btn btn-small volunteer-button',
