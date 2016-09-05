@@ -29,7 +29,7 @@ export function setup(helper) {
             'class' : 'btn btn-small volunteer-button volunteered',
             'show': show,
             'volunteer': 'sound'
-        }, '<i class="fa fa-check-square-o"></i> @' + contents[2]];
+        }, '<i class="fa fa-check-square-o"></i>'] + '@' + contents[2];
       }
         return ['button', {
             'class' : 'btn btn-small volunteer-button',
@@ -48,7 +48,7 @@ export function setup(helper) {
             'class' : 'btn btn-small volunteer-button volunteered',
             'show': show,
             'volunteer': 'trivia'
-        }, '<i class="fa fa-check-square-o"></i> @' + contents[2]];
+        }, '<i class="fa fa-check-square-o"></i>'] + '@' + contents[2];
       }
         return ['button', {
             'class' : 'btn btn-small volunteer-button',

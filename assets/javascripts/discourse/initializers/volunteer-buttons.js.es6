@@ -54,7 +54,7 @@ export default function volunteerSyntax($elem, post)
         }
 
 
-      elem.after('<button class="btn btn-small volunteering"><i class="fa fa-spinner fa-spin"></i> Updating...</button>');
+      elem.after('<button class="btn btn-small volunteering" disabled><i class="fa fa-spinner fa-spin"></i> Updating...</button>');
       elem.hide();
       AjaxLib.ajax({
           url: 'http://api.vigglerumors.com/volunteer/'+ type +'/'+ show,
