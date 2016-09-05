@@ -48,12 +48,15 @@ export function setup(helper) {
     emitter: function(contents) {
       var show = contents[1];
       if(contents[2]){
-        return ['button', {
-            'class' : 'btn btn-small volunteer-button volunteered',
-            'show': show,
-            'volunteer': 'trivia',
-            'user': contents[2]
-        }, '<i class="fa fa-check-square-o"></i> '+ opts.lookupAvatar(contents[2]) ];
+        return ['p',
+          ['button', {
+              'class' : 'btn btn-small volunteer-button volunteered',
+              'show': show,
+              'volunteer': 'trivia',
+              'user': contents[2]
+          }, '<i class="fa fa-check-square-o"></i>'], 
+          ['a', {'class': 'mention', href: '/users/' + contents[2].toLowerCase() }, ' @' + contents[2] ]
+        ];
       }
         return ['button', {
             'class' : 'btn btn-small volunteer-button',
