@@ -35,7 +35,7 @@ export function setup(helper) {
               'show': show,
               'volunteer': 'sound',
               'user': contents[2]
-          }, '<i class="fa fa-check-square-o"></i>'],
+          }, '<i class="fa fa-check-square-o"></i>'],{},
           ['a', {'class': 'mention', href: '/users/' + contents[2].toLowerCase() }, '@' + contents[2] ]
         ];
       }
