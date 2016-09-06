@@ -30,13 +30,14 @@ export function setup(helper) {
     emitter: function(contents) {
       var show = contents[1];
       if(contents[2]){
+        const opts          = helper.getOptions();
         const user          = contents[2];
         return ['button', {
               'class' : 'btn btn-small volunteer-button volunteered',
               'show': show,
               'volunteer': 'sound',
               'user': contents[2],
-          }, '<i class="fa fa-check-square-o"></i> ' + helper.getOptions.lookupAvatar(user) ];
+          }, opts.lookupAvatar(user) + ' Volunteered'];
       }
         return ['button', {
             'class' : 'btn btn-small volunteer-button',
@@ -51,12 +52,15 @@ export function setup(helper) {
     emitter: function(contents) {
       var show = contents[1];
       if(contents[2]){
+        const opts          = helper.getOptions();
+        const lookupAvatar  = opts.lookupAvatar;
+        const user          = contents[2];
         return ['button', {
               'class' : 'btn btn-small volunteer-button volunteered',
               'show': show,
               'volunteer': 'trivia',
               'user': contents[2]
-          }, '<i class="fa fa-check-square-o"></i> ' + helper.getOptions.lookupAvatar(user) ];
+          }, '<i class="fa fa-check-square-o"></i> ' + lookupAvatar(user) ];
       }
         return ['button', {
             'class' : 'btn btn-small volunteer-button',
