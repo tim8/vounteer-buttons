@@ -10,6 +10,7 @@ export function setup(helper) {
   helper.whiteList([ 
     'button[volunteer]',
     'button[show]',
+    'button[disabled]',
     'button[user]',
     'button.btn btn-small volunteer-button',
     'button.btn btn-small volunteer-button volunteered'
