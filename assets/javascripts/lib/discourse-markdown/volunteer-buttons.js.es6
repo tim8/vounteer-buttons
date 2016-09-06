@@ -29,7 +29,7 @@ export function setup(helper) {
     emitter: function(contents) {
       var show = contents[1];
       if(contents[2]){
-        var lookupAvatar = Discourse.Dialect.options.lookupAvatar,
+        var lookupAvatar = opts.lookupAvatar,
             user = contents[2];
         return ['p',
           ['button', {
