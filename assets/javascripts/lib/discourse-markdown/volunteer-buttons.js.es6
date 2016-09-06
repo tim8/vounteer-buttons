@@ -29,8 +29,9 @@ export function setup(helper) {
     emitter: function(contents) {
       var show = contents[1];
       if(contents[2]){
-        var lookupAvatar = opts.lookupAvatar,
-            user = contents[2];
+        const opts          = helper.getOptions();
+        const lookupAvatar  = opts.lookupAvatar;
+        const user          = contents[2];
         return ['p',
           ['button', {
               'class' : 'btn btn-small volunteer-button volunteered',
