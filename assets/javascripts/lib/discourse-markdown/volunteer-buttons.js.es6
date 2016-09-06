@@ -35,7 +35,7 @@ export function setup(helper) {
               'show': show,
               'volunteer': 'sound',
               'user': contents[2]
-          }, '<i class="fa fa-check-square-o"></i> ' + Discourse.Dialect.options.lookupAvatar(contents[2]) ],
+          }, '<i class="fa fa-check-square-o"></i> ' + Discourse.Dialect.lookupAvatar(contents[2]) ],
           ['a', {'class': 'mention', href: '/users/' + contents[2].toLowerCase() }, '@' + contents[2] ]
         ];
       }
