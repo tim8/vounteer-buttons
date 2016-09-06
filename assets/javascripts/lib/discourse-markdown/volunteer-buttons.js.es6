@@ -27,7 +27,8 @@ export function setup(helper) {
     start: '[vs:',
     matcher: /^\[vs:([a-z]{2}\d{12})(?:\:([a-z0-9]+))?\]/i,
     emitter: function(contents) {
-      var show = contents[1];
+      var show = contents[1],
+      lookupAvatar = this.dialect.options.lookupAvatar;
       if(contents[2]){
         return ['p',
           ['button', {
@@ -35,7 +36,7 @@ export function setup(helper) {
               'show': show,
               'volunteer': 'sound',
               'user': contents[2]
-          }, '<i class="fa fa-check-square-o"></i>'],{},
+          }, '<i class="fa fa-check-square-o"></i> ' + lookupAvatar(contents[2]) ],
           ['a', {'class': 'mention', href: '/users/' + contents[2].toLowerCase() }, '@' + contents[2] ]
         ];
       }
