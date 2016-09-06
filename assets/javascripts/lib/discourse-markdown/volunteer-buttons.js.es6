@@ -54,7 +54,6 @@ export function setup(helper) {
       var show = contents[1];
       if(contents[2]){
         const opts          = helper.getOptions();
-        const lookupAvatar  = opts.lookupAvatar;
         const user          = contents[2];
         return ['button', {
               'class' : 'btn btn-small volunteer-button volunteered',
@@ -62,7 +61,7 @@ export function setup(helper) {
               'volunteer': 'trivia',
               'user': contents[2],
               'title': contents[2] + ' has volunteered for this trivia'
-          }, '<i class="fa fa-check-square-o"></i> ' + lookupAvatar(user) ];
+          }, '<i class="fa fa-check-square-o"></i> ' + opts.lookupAvatar(user) ];
       }
         return ['button', {
             'class' : 'btn btn-small volunteer-button',
