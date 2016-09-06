@@ -29,14 +29,16 @@ export function setup(helper) {
     emitter: function(contents) {
       var show = contents[1];
       if(contents[2]){
+        var lookupAvatar = Discourse.Dialect.options.lookupAvatar,
+            user = contents[2];
         return ['p',
           ['button', {
               'class' : 'btn btn-small volunteer-button volunteered',
               'show': show,
               'volunteer': 'sound',
               'user': contents[2]
-          }, '<i class="fa fa-check-square-o"></i> ' + Discourse.Dialect.lookupAvatar(contents[2]) ],
-          ['a', {'class': 'mention', href: '/users/' + contents[2].toLowerCase() }, '@' + contents[2] ]
+          }, '<i class="fa fa-check-square-o"></i> ' + lookupAvatar(user) ],
+          ['a', {'class': 'mention', href: '/users/' + user.toLowerCase() }, '@' + user ]
         ];
       }
         return ['button', {
