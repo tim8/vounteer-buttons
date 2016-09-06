@@ -9,6 +9,7 @@ registerOption((siteSettings, opts) => {
 export function setup(helper) {
   helper.whiteList([ 
     'button[volunteer]',
+    'button[show]',
     'button.btn btn-small volunteer-button volunteered',
     'button[user]'
   ]);
@@ -32,8 +33,8 @@ export function setup(helper) {
               'show': show,
               'volunteer': 'sound',
               'user': contents[2]
-          }, '<i class="fa fa-check-square-o"></i> '], 
-          ['a', {'class': 'mention', href: '/users/' + contents[2].toLowerCase() }, ' @' + contents[2] ]
+          }, '<i class="fa fa-check-square-o"></i>'], ' '
+          ['a', {'class': 'mention', href: '/users/' + contents[2].toLowerCase() }, '@' + contents[2] ]
         ];
       }
         return ['button', {
@@ -55,8 +56,8 @@ export function setup(helper) {
               'show': show,
               'volunteer': 'trivia',
               'user': contents[2]
-          }, '<i class="fa fa-check-square-o"></i> '], 
-          ['a', {'class': 'mention', href: '/users/' + contents[2].toLowerCase() }, ' @' + contents[2] ]
+          }, '<i class="fa fa-check-square-o"></i>'], ' '
+          ['a', {'class': 'mention', href: '/users/' + contents[2].toLowerCase() }, '@' + contents[2] ]
         ];
       }
         return ['button', {
