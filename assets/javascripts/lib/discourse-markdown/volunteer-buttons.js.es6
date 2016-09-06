@@ -34,7 +34,7 @@ export function setup(helper) {
               'show': show,
               'volunteer': 'sound',
               'user': contents[2]
-          }, '<i class="fa fa-check-square-o"></i>'],[' '],
+          }, '<i class="fa fa-check-square-o"></i>'],
           ['a', {'class': 'mention', href: '/users/' + contents[2].toLowerCase() }, '@' + contents[2] ]
         ];
       }
@@ -42,7 +42,7 @@ export function setup(helper) {
             'class' : 'btn btn-small volunteer-button',
             'show': show,
             'volunteer': 'sound'
-        }, '<i class="vri-tv-v"></i>Volunteer'];
+        }, '<i class="vri-tv-v"></i> Volunteer'];
     }
   });
   helper.inlineRegexp({
@@ -57,7 +57,7 @@ export function setup(helper) {
               'show': show,
               'volunteer': 'trivia',
               'user': contents[2]
-          }, '<i class="fa fa-check-square-o"></i>'],[' '],
+          }, '<i class="fa fa-check-square-o"></i>'],
           ['a', {'class': 'mention', href: '/users/' + contents[2].toLowerCase() }, '@' + contents[2] ]
         ];
       }
@@ -65,7 +65,7 @@ export function setup(helper) {
             'class' : 'btn btn-small volunteer-button',
             'show': show,
             'volunteer': 'trivia'
-        }, '<i class="vri-live"></i>Volunteer'];
+        }, '<i class="vri-live"></i> Volunteer'];
     }
   });
 }
