@@ -37,6 +37,7 @@ export function setup(helper) {
               'show': show,
               'volunteer': 'sound',
               'user': contents[2],
+              'title': contents[2] + ' has volunteered for this sound'
           }, opts.lookupAvatar(user) + ' Volunteered'];
       }
         return ['button', {
@@ -59,7 +60,8 @@ export function setup(helper) {
               'class' : 'btn btn-small volunteer-button volunteered',
               'show': show,
               'volunteer': 'trivia',
-              'user': contents[2]
+              'user': contents[2],
+              'title': contents[2] + ' has volunteered for this trivia'
           }, '<i class="fa fa-check-square-o"></i> ' + lookupAvatar(user) ];
       }
         return ['button', {
