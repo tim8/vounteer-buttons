@@ -50,6 +50,7 @@ export default function volunteerSyntax($elem, post)
           {
             var remove =  confirm("Are you sure you want to un-volunteer?");
             if (remove == false) { return; }
+            elem.parentElement.getElementsByClassName('mention').hide();
           }
         }
 
