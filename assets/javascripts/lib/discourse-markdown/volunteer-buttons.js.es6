@@ -10,6 +10,7 @@ export function setup(helper) {
   helper.whiteList([ 
     'button[volunteer]',
     'button[show]',
+    'button[title]',
     'button[disabled]',
     'button[user]',
     'button.btn btn-small volunteer-button',
@@ -29,18 +30,13 @@ export function setup(helper) {
     emitter: function(contents) {
       var show = contents[1];
       if(contents[2]){
-        const opts          = helper.getOptions();
-        const lookupAvatar  = opts.lookupAvatar;
         const user          = contents[2];
-        return ['p',
-          ['button', {
+        return ['button', {
               'class' : 'btn btn-small volunteer-button volunteered',
               'show': show,
               'volunteer': 'sound',
-              'user': contents[2]
-          }, '<i class="fa fa-check-square-o"></i> ' + lookupAvatar(user) ],
-          ['a', {'class': 'mention', href: '/users/' + user.toLowerCase() }, '@' + user ]
-        ];
+              'user': contents[2],
+          }, '<i class="fa fa-check-square-o"></i> ' + helper.getOptions.lookupAvatar(user) ];
       }
         return ['button', {
             'class' : 'btn btn-small volunteer-button',
@@ -55,15 +51,12 @@ export function setup(helper) {
     emitter: function(contents) {
       var show = contents[1];
       if(contents[2]){
-        return ['p',
-          ['button', {
+        return ['button', {
               'class' : 'btn btn-small volunteer-button volunteered',
               'show': show,
               'volunteer': 'trivia',
               'user': contents[2]
-          }, '<i class="fa fa-check-square-o"></i>'],
-          ['a', {'class': 'mention', href: '/users/' + contents[2].toLowerCase() }, '@' + contents[2] ]
-        ];
+          }, '<i class="fa fa-check-square-o"></i> ' + helper.getOptions.lookupAvatar(user) ];
       }
         return ['button', {
             'class' : 'btn btn-small volunteer-button',
