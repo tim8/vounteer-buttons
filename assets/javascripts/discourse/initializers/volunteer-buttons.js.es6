@@ -25,13 +25,13 @@ export default function volunteerSyntax($elem, post)
   if(!buttons){return};
   if(!user){
       //$(buttons).after('log in to volunteer');
-      $(buttons).prop("disabled",true);
-      return;
+      $(buttons).disabled=true;
+      return
   };
   //if (!user || age >= 86400000) { 
 	if (age >= 86400000) { 
       $(buttons).remove();
-      return;
+      return
 	};
 
     $(buttons).click(function(obj) {
