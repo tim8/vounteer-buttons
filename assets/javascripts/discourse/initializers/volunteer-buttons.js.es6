@@ -16,22 +16,22 @@ export default function volunteerSyntax($elem, post)
 {
   if (!post) { return; }
   if(topic.category && topic.id != siteSettings.volunteerbuttons_categoryid){
-      return
+      return;
   };
   var age = new Date() - new Date(topic.created_at),
       buttons = $elem.find(".volunteer-button"),
       user = Discourse.User.currentProp('username');
 
-  if(!buttons){return};
+  if(!buttons){return;};
   if(!user){
       $(buttons).after('log in to volunteer');
       $(buttons).disabled = true;
-      return
+      return;
   };
   //if (!user || age >= 86400000) { 
 	if (age >= 86400000) { 
       $(buttons).remove();
-      return
+      return;
 	};
 
     $(buttons).click(function(obj) {
@@ -44,14 +44,14 @@ export default function volunteerSyntax($elem, post)
         {
           var user = prompt("Enter a valid username",user);
           if (user === null || user === false ) 
-            { return }
+            { return; }
         }
         else
         {
           if(elem.hasClass("volunteered"))
           {
             var remove =  confirm("Are you sure you want to un-volunteer?");
-            if (remove === false) { return }
+            if (remove === false) { return; }
             elem.parentElement.getElementsByClassName('mention').hide();
           }
         }
