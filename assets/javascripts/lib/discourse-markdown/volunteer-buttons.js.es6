@@ -9,9 +9,8 @@ registerOption((siteSettings, opts) => {
 export function setup(helper) {
   helper.whiteList([ 
     'button[volunteer]',
-    'button.btn btn-small volunteer-button',
-    'button.volunteered',
-    'button user'
+    'button.btn btn-small volunteer-button volunteered',
+    'button[user]'
   ]);
   helper.whiteList({
     custom(tag, name, value) {
