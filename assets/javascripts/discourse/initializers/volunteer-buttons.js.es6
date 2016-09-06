@@ -24,7 +24,7 @@ export default function volunteerSyntax($elem, post)
 
   if(!buttons){return};
   if(!user){
-      //$(buttons).after('log in to volunteer');
+      $(buttons).after('log in to volunteer');
       $(buttons).disabled = true;
       return
   };
@@ -43,15 +43,15 @@ export default function volunteerSyntax($elem, post)
         if(obj.altKey)
         {
           var user = prompt("Enter a valid username",user);
-          if (user == false) 
-            { return; }
+          if (user === null || user === false ) 
+            { return }
         }
         else
         {
           if(elem.hasClass("volunteered"))
           {
             var remove =  confirm("Are you sure you want to un-volunteer?");
-            if (remove == false) { return; }
+            if (remove === false) { return }
             elem.parentElement.getElementsByClassName('mention').hide();
           }
         }
