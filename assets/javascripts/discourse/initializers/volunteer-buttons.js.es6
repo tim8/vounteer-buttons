@@ -41,19 +41,17 @@ export default function volunteerSyntax($elem, post)
           type = this.getAttribute("volunteer");
 
 
-        if(obj.altKey)
-        {
+        if(obj.altKey){
           var user = prompt("Enter a valid username",user);
           if (user === null || user === false ) 
             { return; }
-        }
-        else
-        {
-          if(elem.hasClass("volunteered"))
-          {
-            var remove =  confirm("Are you sure you want to un-volunteer?");
-            if (remove === false) { return; }
-            //$(elem).next('a.mention').hide();
+        }else{
+          if(elem.hasClass("volunteered")){
+
+			bootbox.confirm("Are you sure you want to un-volunteer?", function(remove) {
+	            if (remove === false) { return; }
+	            $(elem).next('a.mention').hide();
+			}); 
           }
         }
 
