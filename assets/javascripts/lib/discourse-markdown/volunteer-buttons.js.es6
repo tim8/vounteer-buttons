@@ -38,7 +38,7 @@ export function setup(helper) {
               'volunteer': 'sound',
               'user': user,
               'title': user + ' has volunteered for this sound'
-          }, '<i class="fa fa-check-square-o"></i> ' ],' ',
+          }, '<i class="fa fa-check-square-o"></i> ' ],'  ',
           ['a', {'class': 'mention', href: '/users/' + user.toLowerCase()},'@' + user]
         ];
       }

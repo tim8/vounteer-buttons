@@ -18,9 +18,9 @@ export default function volunteerSyntax($elem, post)
 	if(topic.category && topic.id != siteSettings.volunteerbuttons_categoryid){
 	  return;
 	};
-	const age 	= new Date() - new Date(topic.created_at),
-      	buttons = $elem.find(".volunteer-button"),
-      	user 	= Discourse.User.currentProp('username');
+	const 	age 	= new Date() - new Date(topic.created_at),
+      		buttons = $elem.find(".volunteer-button"),
+      		user 	= Discourse.User.currentProp('username');
 
 	if(!buttons){return;};
 	if(!user){
@@ -42,16 +42,15 @@ export default function volunteerSyntax($elem, post)
 
 
         if(obj.altKey){
-          var user = prompt("Enter a valid username", user );
+          var user = prompt("Enter a valid username:", "hello "+user );
           if (user === null || user === false ) 
             { return; }
         }else{
           if(elem.hasClass("volunteered")){
 
-			bootbox.confirm("Are you sure you want to un-volunteer?", function(remove) {
-	            if (remove === false) { return; }
-	            $(elem).next('a.mention').hide();
-			}); 
+            var remove =  confirm("Are you sure you want to un-volunteer?");
+            if (remove === false) { return; }
+            $(elem).next('a.mention').hide();
           }
         }
 
