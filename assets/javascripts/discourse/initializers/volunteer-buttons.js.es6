@@ -36,20 +36,21 @@ export default function volunteerSyntax($elem, post)
 	};
 
     $(buttons).click(function(obj) {
-      var elem = $(obj.currentTarget),
-          show = this.getAttribute("show"),
-          type = this.getAttribute("volunteer");
-          console.log("user: "+user);
+		var elem = $(obj.currentTarget),
+			show = this.getAttribute("show"),
+			type = this.getAttribute("volunteer");
+
+		console.log("user: "+user);
 
         if(obj.altKey || elem.on("taphold")){
-        	console.log("b4 alt user: "+user);
-         var user = prompt("Enter a valid username:", "hello " + user );
-         console.log("alt user: "+user);
-          if (user === null || user === false ) 
-            { return; }
+	        console.log("b4 alt user: "+user);
+	        var user = prompt("Enter a valid username:", "hello " + user );
+	        console.log("alt user: "+user);
+			if (user === null || user === false ) { 
+				return; 
+			}
         }else{
           if(elem.hasClass("volunteered")){
-
             var remove =  confirm("Are you sure you want to un-volunteer?");
             if (remove === false) { return; }
             $(elem).next('a.mention').hide();
