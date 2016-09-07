@@ -58,7 +58,7 @@ export default function volunteerSyntax($elem, post)
 		AjaxLib.ajax({
 			url: 'http://api.vigglerumors.com/volunteer/'+ type +'/'+ show,
 			type: 'PUT',
-			data: 'user=' + user
+			data: 'user=' + user + (remove == true ? '&unvolunteer=true':'')
 		});
 
     });
