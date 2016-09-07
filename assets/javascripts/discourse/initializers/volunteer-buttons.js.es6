@@ -40,10 +40,10 @@ export default function volunteerSyntax($elem, post)
 			show = this.getAttribute("show"),
 			type = this.getAttribute("volunteer");
 
-		console.log("user: " + user);
+		console.log("user: " + $user);
 
 		if(obj.altKey){
-			console.log("b4 alt user: "+user);
+			console.log("b4 alt user: "+$(user));
 			var user = prompt("Enter a valid username:", "hello " + user );
 			console.log("alt user: "+user);
 			if (user === null || user === false ) { 
@@ -56,7 +56,6 @@ export default function volunteerSyntax($elem, post)
 				$(elem).next('a.mention').hide();
 			}
 		}
-
 
 		elem.after('<button class="btn btn-small volunteering" disabled><i class="fa fa-spinner fa-spin"></i> Updating...</button>');
 		elem.hide();
