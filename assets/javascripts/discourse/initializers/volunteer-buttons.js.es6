@@ -38,8 +38,7 @@ export default function volunteerSyntax($elem, post)
     $(buttons).click(function(obj) {
 		var elem = $(obj.currentTarget),
 			show = this.getAttribute("show"),
-			type = this.getAttribute("volunteer"),
-			user = user;
+			type = this.getAttribute("volunteer");
 
 		console.log("user: " + user);
 
