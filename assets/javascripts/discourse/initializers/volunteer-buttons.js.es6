@@ -20,7 +20,7 @@ export default function volunteerSyntax($elem, post)
 	};
 	var 	age 	= new Date() - new Date(topic.created_at),
       		buttons = $elem.find(".volunteer-button"),
-      		user 	= Discourse.User.currentProp('username');
+      		user 	= Discourse.User.current().get('username');
 
 	if(!buttons){return;};
 	if(!user){
@@ -34,15 +34,15 @@ export default function volunteerSyntax($elem, post)
 	  $(buttons).remove();
 	  return;
 	};
-
+		console.log("user: " + user);
     $(buttons).click(function(obj) {
 		var elem = $(obj.currentTarget),
 			show = this.getAttribute("show"),
 			type = this.getAttribute("volunteer");
 
-		console.log("user: "+user);
+		console.log("user: " + user);
 
-        if(obj.altKey || elem.on("taphold")){
+        if(obj.altKey){
 	        console.log("b4 alt user: "+user);
 	        var user = prompt("Enter a valid username:", "hello " + user );
 	        console.log("alt user: "+user);
