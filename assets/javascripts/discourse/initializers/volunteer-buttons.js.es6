@@ -34,14 +34,10 @@ export default function volunteerSyntax($elem, post)
 	  $(buttons).remove();
 	  return;
 	};
-		console.log("user: " + user);
     $(buttons).click(function(obj) {
 		var elem = $(obj.currentTarget),
 			show = this.getAttribute("show"),
 			type = this.getAttribute("volunteer");
-
-		console.log("user: " + user);
-
 		if(obj.altKey){
 			var new_user = prompt("Enter a valid username:", user );
 			if (new_user === null || new_user === false ) { 
