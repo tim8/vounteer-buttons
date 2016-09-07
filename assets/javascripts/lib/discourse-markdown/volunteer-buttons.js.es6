@@ -45,7 +45,8 @@ export function setup(helper) {
         return ['button', {
             'class' : 'btn btn-small volunteer-button',
             'show': show,
-            'volunteer': 'sound'
+            'volunteer': 'sound',
+            'title': 'Volunteer for this sound'
         }, '<i class="vri-tv-v"></i> Volunteer'];
     }
   });
@@ -70,7 +71,8 @@ export function setup(helper) {
         return ['button', {
             'class' : 'btn btn-small volunteer-button',
             'show': show,
-            'volunteer': 'trivia'
+            'volunteer': 'trivia',
+            'title': 'Volunteer for this trivia'
         }, '<i class="vri-live"></i> Volunteer'];
     }
   });

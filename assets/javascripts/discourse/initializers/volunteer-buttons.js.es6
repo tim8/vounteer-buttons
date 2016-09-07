@@ -38,12 +38,13 @@ export default function volunteerSyntax($elem, post)
     $(buttons).click(function(obj) {
       var elem = $(obj.currentTarget),
           show = this.getAttribute("show"),
-          type = this.getAttribute("volunteer"),
-          username = user;
-
+          type = this.getAttribute("volunteer");
+          console.log("user: "+user);
 
         if(obj.altKey || elem.on("taphold")){
-          var user = prompt("Enter a valid username:", "hello "+ username );
+        	console.log("b4 alt user: "+user);
+         user = prompt("Enter a valid username:", "hello " + user );
+         console.log("alt user: "+user);
           if (user === null || user === false ) 
             { return; }
         }else{
