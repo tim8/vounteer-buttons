@@ -43,11 +43,11 @@ export default function volunteerSyntax($elem, post)
 		console.log("user: " + user);
 
 		if(obj.altKey){
-			console.log("b4 alt user: "+ user);
-			user = prompt("Enter a valid username:", "hello " + user );
-			console.log("alt user: "+user);
-			if (user === null || user === false ) { 
+			var new_user = prompt("Enter a valid username:", user );
+			if (new_user === null || new_user === false ) { 
 				return; 
+			}else{
+				user = new_user;
 			}
 		}else{
 			if(elem.hasClass("volunteered")){
