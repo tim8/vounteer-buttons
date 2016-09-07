@@ -14,25 +14,25 @@ function initializePlugin(api)
 
 export default function volunteerSyntax($elem, post)
 {
-  if (!post) { return; }
-  if(topic.category && topic.id != siteSettings.volunteerbuttons_categoryid){
-      return;
-  };
-  var age = new Date() - new Date(topic.created_at),
-      buttons = $elem.find(".volunteer-button"),
-      user = Discourse.User.currentProp('username');
+	if (!post) { return; }
+	if(topic.category && topic.id != siteSettings.volunteerbuttons_categoryid){
+	  return;
+	};
+	const age 	= new Date() - new Date(topic.created_at),
+      	buttons = $elem.find(".volunteer-button"),
+      	user 	= Discourse.User.currentProp('username');
 
-  if(!buttons){return;};
-  if(!user){
-     // $(buttons).after('log in to volunteer');
-      $(buttons).prop("disabled",true);
-      $(buttons).attr("title","log in to volunteer");
-      return;
-  };
-  //if (!user || age >= 86400000) { 
+	if(!buttons){return;};
+	if(!user){
+	 // $(buttons).after('log in to volunteer');
+	  $(buttons).prop("disabled",true);
+	  $(buttons).attr("title","log in to volunteer");
+	  return;
+	};
+	//if (!user || age >= 86400000) { 
 	if (age >= 86400000) { 
-      $(buttons).remove();
-      return;
+	  $(buttons).remove();
+	  return;
 	};
 
     $(buttons).click(function(obj) {
@@ -42,7 +42,7 @@ export default function volunteerSyntax($elem, post)
 
 
         if(obj.altKey){
-          var user = prompt("Enter a valid username",user);
+          var user = prompt("Enter a valid username", user );
           if (user === null || user === false ) 
             { return; }
         }else{
