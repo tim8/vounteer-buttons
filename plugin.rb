@@ -7,10 +7,4 @@
 #register_asset 'javascripts/volunteer.js.erb', :server_side
 #register_asset 'javascripts/volunteer_buttons.js'
 
-register_css <<CSS
-
-span.chcklst-stroked {
-	text-decoration: line-through;
-}
-
-CSS
+register_asset "stylesheets/volunteer-buttons.scss"
