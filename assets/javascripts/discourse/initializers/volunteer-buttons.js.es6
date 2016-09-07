@@ -42,29 +42,29 @@ export default function volunteerSyntax($elem, post)
 
 		console.log("user: " + user);
 
-        if(obj.altKey){
-	        console.log("b4 alt user: "+user);
-	        var user = prompt("Enter a valid username:", "hello " + user );
-	        console.log("alt user: "+user);
+		if(obj.altKey){
+			console.log("b4 alt user: "+user);
+			var user = prompt("Enter a valid username:", "hello " + user );
+			console.log("alt user: "+user);
 			if (user === null || user === false ) { 
 				return; 
 			}
-        }else{
-          if(elem.hasClass("volunteered")){
-            var remove =  confirm("Are you sure you want to un-volunteer?");
-            if (remove === false) { return; }
-            $(elem).next('a.mention').hide();
-          }
-        }
+		}else{
+			if(elem.hasClass("volunteered")){
+				var remove =  confirm("Are you sure you want to un-volunteer?");
+				if (remove === false) { return; }
+				$(elem).next('a.mention').hide();
+			}
+		}
 
 
-      elem.after('<button class="btn btn-small volunteering" disabled><i class="fa fa-spinner fa-spin"></i> Updating...</button>');
-      elem.hide();
-      AjaxLib.ajax({
-          url: 'http://api.vigglerumors.com/volunteer/'+ type +'/'+ show,
-          type: 'PUT',
-          data: 'user=' + user
-      });
+		elem.after('<button class="btn btn-small volunteering" disabled><i class="fa fa-spinner fa-spin"></i> Updating...</button>');
+		elem.hide();
+		AjaxLib.ajax({
+			url: 'http://api.vigglerumors.com/volunteer/'+ type +'/'+ show,
+			type: 'PUT',
+			data: 'user=' + user
+		});
 
     });
 }
