@@ -35,7 +35,7 @@ export default function volunteerSyntax($elem, post)
 	  return;
 	};
 		console.log("user: " + user);
-    $(buttons).click(function(obj,user) {
+    $(buttons).click(function(obj) {
 		var elem = $(obj.currentTarget),
 			show = this.getAttribute("show"),
 			type = this.getAttribute("volunteer"),
@@ -45,7 +45,7 @@ export default function volunteerSyntax($elem, post)
 
 		if(obj.altKey){
 			console.log("b4 alt user: "+ user);
-			var user = prompt("Enter a valid username:", "hello " + user );
+			user = prompt("Enter a valid username:", "hello " + user );
 			console.log("alt user: "+user);
 			if (user === null || user === false ) { 
 				return; 
