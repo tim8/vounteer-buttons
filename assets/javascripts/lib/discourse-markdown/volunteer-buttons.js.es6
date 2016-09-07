@@ -32,6 +32,7 @@ export function setup(helper) {
       if(contents[2]){
         const opts          = helper.getOptions();
         const user          = contents[2];
+        const avatar        = opts.lookupAvatar(user);
         return ['p',
           ['button', {
               'class' : 'btn btn-small volunteer-button volunteered',
@@ -40,7 +41,7 @@ export function setup(helper) {
               'user': contents[2],
               'title': contents[2] + ' has volunteered for this sound'
           }, '<i class="fa fa-check-square-o"></i> ' + lookupAvatar(user) ],
-          ['a', {'class': 'mention', href: '/users/' + user.toLowerCase() }, opts.lookupAvatar(user) + ' @' + user ]
+          ['a', {'class': 'mention', href: '/users/' + user.toLowerCase() },  avatar + ' @' + user ]
         ];
       }
         return ['button', {
