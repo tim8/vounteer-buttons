@@ -18,7 +18,7 @@ export default function volunteerSyntax($elem, post)
 	if(topic.category && topic.id != siteSettings.volunteerbuttons_categoryid){
 	  return;
 	};
-	const 	age 	= new Date() - new Date(topic.created_at),
+	var 	age 	= new Date() - new Date(topic.created_at),
       		buttons = $elem.find(".volunteer-button"),
       		user 	= Discourse.User.currentProp('username');
 
@@ -43,7 +43,7 @@ export default function volunteerSyntax($elem, post)
 
         if(obj.altKey || elem.on("taphold")){
         	console.log("b4 alt user: "+user);
-         user = prompt("Enter a valid username:", "hello " + user );
+         var user = prompt("Enter a valid username:", "hello " + user );
          console.log("alt user: "+user);
           if (user === null || user === false ) 
             { return; }
