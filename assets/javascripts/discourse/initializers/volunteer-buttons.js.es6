@@ -15,7 +15,7 @@ function initializePlugin(api)
 export default function volunteerSyntax($elem, post)
 {
 	if (!post) { return; }
-	console.log(post);
+	console.log(this.get('topic.category_id'));
 	if(topic.category && topic.id != siteSettings.volunteerbuttons_categoryid){
 	  return;
 	};
